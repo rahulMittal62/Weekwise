@@ -1,0 +1,34 @@
+{
+  "name": "weekwise-tasks",
+  "private": true,
+  "version": "1.0.0",
+  "workspaces": [
+    "client",
+    "server"
+  ],
+  "engines": {
+    "node": "^20.19.0 || ^22.13.0 || >=24.0.0"
+  },
+  "scripts": {
+    "dev:client": "npm run dev --workspace @weekwise/client",
+    "dev:server": "npm run dev --workspace @weekwise/server",
+    "build": "npm run build --workspace @weekwise/client",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "lint": "eslint .",
+    "test": "npm run test --workspace @weekwise/server && npm run test --workspace @weekwise/client",
+    "start": "npm run start --workspace @weekwise/server"
+  },
+  "devDependencies": {
+    "@eslint/js": "10.0.1",
+    "eslint": "10.14.0",
+    "eslint-config-prettier": "10.1.8",
+    "eslint-plugin-react-hooks": "7.1.1",
+    "globals": "17.14.0",
+    "jsdom": "^25.0.1",
+    "prettier": "3.10.1"
+  },
+  "overrides": {
+    "minimatch": "11.0.1"
+  }
+}

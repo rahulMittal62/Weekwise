@@ -1,0 +1,33 @@
+import js from '@eslint/js';
+import prettier from 'eslint-config-prettier';
+import globals from 'globals';
+import reactHooks from 'eslint-plugin-react-hooks';
+
+export default [
+  {
+    ignores: [
+      '**/node_modules/**',
+      '**/dist/**',
+      'coverage/**',
+      'playwright-report/**',
+      'test-results/**',
+    ],
+  },
+  js.configs.recommended,
+  {
+    files: ['**/*.{js,jsx}'],
+    languageOptions: {
+      ecmaVersion: 'latest',
+      sourceType: 'module',
+      globals: { ...globals.browser, ...globals.node, ...globals.vitest },
+      parserOptions: { ecmaFeatures: { jsx: true } },
+    },
+    plugins: { 'react-hooks': reactHooks },
+    rules: {
+      'no-unused-vars': ['error', { argsIgnorePattern: '^_', varsIgnorePattern: '^_' }],
+      'react-hooks/rules-of-hooks': 'error',
+      'react-hooks/exhaustive-deps': 'warn',
+    },
+  },
+  prettier,
+];
