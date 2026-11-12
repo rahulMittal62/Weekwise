@@ -28,9 +28,9 @@ Create a site from the same repository with:
 - Base directory: `client`
 - Build command: `npm run build`
 - Publish directory: `dist`
-- Environment: `VITE_API_URL=https://your-api-host.example.com/api`
+- `netlify.toml` sets `VITE_API_URL` to `https://weekwise-api.onrender.com/api`. If Render assigns a different API hostname, update this value before deploying.
 
-The client uses `VITE_API_URL` for production requests. Vite's local proxy is only for development. After the first deploy, put the final Netlify origin into the API's `CLIENT_ORIGIN` setting and redeploy the API.
+The client uses `VITE_API_URL` for production requests. Vite's local proxy is only for development. Set the API's `CLIENT_ORIGIN` to the final Netlify origin and redeploy the API.
 
 ## Smoke check after deploy
 

@@ -74,7 +74,7 @@ npm test
 
 ## Deployment
 
-The repository includes a Netlify configuration and a Render Blueprint for both the static client and API. The API connects to MongoDB Atlas. Render prompts for `MONGODB_URI` and `CLIENT_ORIGIN`; set the latter to the deployed client origin. The Blueprint wires the client to the API hostname. For Netlify, set `VITE_API_URL` to the deployed API's `/api` base URL and configure the API's `CLIENT_ORIGIN` to the Netlify origin. See [deployment notes](docs/DEPLOYMENT.md).
+The repository includes a Netlify configuration and a Render Blueprint for both the static client and API. The API connects to MongoDB Atlas. Render prompts for `MONGODB_URI` and `CLIENT_ORIGIN`; set the latter to the deployed client origin. The Blueprint wires the Render client to the API hostname, and `netlify.toml` sets the API URL used by the Netlify client. See [deployment notes](docs/DEPLOYMENT.md).
 
 ## Product decisions
 
