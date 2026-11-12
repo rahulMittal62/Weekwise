@@ -6,7 +6,7 @@ export default defineConfig({
   test: {
     environment: 'jsdom',
     setupFiles: './src/testSetup.js',
-    exclude: ['e2e/**', '**/node_modules/**'],
+    exclude: ['**/node_modules/**'],
   },
   server: { proxy: { '/api': process.env.VITE_API_PROXY ?? 'http://localhost:4000' } },
 });

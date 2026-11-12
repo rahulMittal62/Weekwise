@@ -7,7 +7,7 @@ A calm, responsive weekly task planner. Create, edit, search, complete, and dele
 - **Client:** React 18, Vite, Lucide icons, plain CSS
 - **API:** Node.js, Express, Mongoose
 - **Database:** MongoDB
-- **Quality:** ESLint, Prettier, Vitest, Supertest, Testing Library, Playwright
+- **Quality:** ESLint, Prettier, Vitest, Supertest, Testing Library
 
 The UI and API are separated into small modules so the date logic, validation rules, API behavior, and user flows can be reviewed independently. The API accepts an injected repository in tests, so its route tests do not need a running database.
 
@@ -39,17 +39,16 @@ Open the Vite URL (normally `http://localhost:5173`). The development server pro
 
 ## Commands
 
-| Command                                         | Purpose                                                      |
-| ----------------------------------------------- | ------------------------------------------------------------ |
-| `npm run dev:client`                            | Start Vite with the API proxy                                |
-| `npm run dev:server`                            | Start the API with Node watch mode                           |
-| `npm run build`                                 | Create the production client bundle in `client/dist`         |
-| `npm run lint`                                  | Lint JavaScript and JSX with ESLint                          |
-| `npm run format`                                | Format project files with Prettier                           |
-| `npm run format:check`                          | Check formatting without changing files                      |
-| `npm test`                                      | Run server and client unit/integration tests                 |
-| `npm run test:e2e --workspace @weekwise/client` | Run Playwright mobile browser flows (requires Google Chrome) |
-| `npm start`                                     | Start the production API                                     |
+| Command                | Purpose                                              |
+| ---------------------- | ---------------------------------------------------- |
+| `npm run dev:client`   | Start Vite with the API proxy                        |
+| `npm run dev:server`   | Start the API with Node watch mode                   |
+| `npm run build`        | Create the production client bundle in `client/dist` |
+| `npm run lint`         | Lint JavaScript and JSX with ESLint                  |
+| `npm run format`       | Format project files with Prettier                   |
+| `npm run format:check` | Check formatting without changing files              |
+| `npm test`             | Run server and client unit/integration tests         |
+| `npm start`            | Start the production API                             |
 
 ## API overview
 
@@ -71,12 +70,6 @@ The Vitest suite covers task validation, safe search filters, stable API respons
 
 ```sh
 npm test
-```
-
-The separate Playwright suite runs the mobile UI in Chrome and covers onboarding, create/complete, edit/delete, and search. It stubs the API so the browser tests do not need MongoDB:
-
-```sh
-npm run test:e2e --workspace @weekwise/client
 ```
 
 ## Deployment

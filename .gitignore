@@ -6,8 +6,6 @@ dist/
 coverage/
 .vitest/
 **/.vite/
-playwright-report/
-test-results/
 .DS_Store
 npm-debug.log*
 node_modules
